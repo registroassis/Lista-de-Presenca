@@ -28,7 +28,7 @@ h1{font-size:clamp(34px,5vw,52px)}h2{font-size:clamp(26px,3vw,34px)}
 @keyframes tw{0%,100%{opacity:.35}50%{opacity:1}}.tw{animation:tw 3s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.tw{animation:none}}
 .form{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);box-shadow:0 10px 30px rgba(19,37,74,.08)}
-.form p.lead{color:var(--mute);margin:8px 0 22px}
+.form p.lead{color:var(--mute);margin:8px 0 22px}.form p.lead:empty{display:none}
 label.l{display:block;font-weight:600;font-size:15px;margin:18px 0 8px}
 input[type=text],input[type=password],textarea,select{width:100%;font:16px Inter,sans-serif;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:46px}
 textarea{min-height:90px;resize:vertical}
@@ -127,7 +127,7 @@ table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 <section class="band">
   <form class="form" id="f1" autocomplete="off">
     <h2 id="formTitulo">Confirme sua presença</h2>
-    <p class="lead" id="formLead">Leva menos de um minuto. Se mudar de ideia, é só responder de novo.</p>
+    <p class="lead" id="formLead"></p>
     <label class="l" for="nomeSel" id="lNome">Seu nome</label>
     <select id="nomeSel"><option value="">Carregando nomes…</option></select>
     <input type="text" id="nomeTxt" class="hide" placeholder="Digite seu nome completo">
@@ -284,7 +284,7 @@ function entrarEdicao(key,nome){
   fill(key?rsvps.find(r=>r.id===key):null);msg($('msg'),'');$('f1').scrollIntoView({behavior:'smooth'});
 }
 function sairEdicao(){
-  editKey=null;renderNomes();$('formTitulo').textContent='Confirme sua presença';$('formLead').textContent='Leva menos de um minuto. Se mudar de ideia, é só responder de novo.';
+  editKey=null;renderNomes();$('formTitulo').textContent='Confirme sua presença';$('formLead').textContent='';
   $('lNome').textContent='Seu nome';$('cancelar').classList.add('hide');$('nomeTxt').value='';$('nomeSel').value='';fill(null);
 }
 $('cancelar').addEventListener('click',()=>{sairEdicao();msg($('msg'),'')});
