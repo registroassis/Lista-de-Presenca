@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Festa de Fim de Ano – Registro Assis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;
+--bg:#f6f4ef;--card:#fff;--ink:#14203a;--mute:#5b6478;--line:#e2ded3;
+--navy:#13254a;--navy2:#0c1a36;--gold:#c9a24a;--gold2:#e6c878;--ok:#1d7a4c;--no:#b23b2e}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+h1,h2{font-family:Fraunces,Georgia,serif;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px)}h2{font-size:clamp(26px,3vw,34px)}
+.hero{background:radial-gradient(120% 90% at 80% 10%,#1d3768 0,var(--navy) 45%,var(--navy2) 100%);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.org{font-size:14px;color:var(--gold2);font-weight:600;margin-bottom:14px}
+.hero p{color:#d6dcea;max-width:52ch}
+.info{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font-size:15px}
+.info div{display:flex;flex-direction:column}.info b{color:var(--gold2);font-size:13px;font-weight:600}
+.info span{color:#fff;font-weight:500}
+.fig{position:relative;aspect-ratio:5/4;max-height:420px}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+@keyframes tw{0%,100%{opacity:.35}50%{opacity:1}}.tw{animation:tw 3s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.tw{animation:none}}
+.form{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);box-shadow:0 10px 30px rgba(19,37,74,.08)}
+.form p.lead{color:var(--mute);margin:8px 0 22px}
+label.l{display:block;font-weight:600;font-size:15px;margin:18px 0 8px}
+input[type=text],input[type=password],textarea,select{width:100%;font:16px Inter,sans-serif;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-height:46px}
+textarea{min-height:90px;resize:vertical}
+input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{flex:1 1 120px;min-height:48px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:600 15px Inter,sans-serif;cursor:pointer}
+.pills button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:inset 0 -3px 0 var(--gold)}
+.btn{min-height:48px;padding:0 22px;border-radius:12px;border:0;background:var(--gold);color:#14203a;font:600 16px Inter,sans-serif;cursor:pointer}
+.btn.sec{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.sm{min-height:40px;padding:0 14px;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
+.msg{font-size:15px;color:var(--ok);font-weight:500}.msg.err{color:var(--no)}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.done{background:color-mix(in srgb,var(--ok) 10%,transparent);border:1px solid color-mix(in srgb,var(--ok) 30%,transparent);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:15px}
+.panel{border-top:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat b{display:block;font:700 clamp(28px,4vw,40px)/1 Fraunces,serif}
+.stat span{font-size:14px;color:var(--mute)}
+.stat.main{background:var(--navy);color:#fff;border-color:var(--navy)}.stat.main b{color:var(--gold2)}.stat.main span{color:#d6dcea}
+.meter{height:12px;border-radius:8px;background:var(--line);overflow:hidden;display:flex}
+.meter i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--mute);margin:8px 0 22px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{min-height:40px;padding:0 14px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:500 14px Inter,sans-serif;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bar input{flex:1 1 200px;max-width:320px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th{font-size:13px;color:var(--mute);font-weight:600;text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap}
+.t-sim{color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,transparent)}
+.t-nao{color:var(--no);background:color-mix(in srgb,var(--no) 13%,transparent)}
+.t-pend{color:var(--mute);background:color-mix(in srgb,var(--mute) 14%,transparent)}
+.row-act{display:flex;gap:6px;flex-wrap:wrap}
+.row-act button{min-height:36px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);font:500 13px Inter,sans-serif;cursor:pointer}
+.row-act button.danger{color:var(--no);border-color:var(--no)}
+.empty{padding:28px;text-align:center;color:var(--mute)}
+details{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 18px}
+summary{cursor:pointer;font-weight:600;padding:14px 0;min-height:44px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+footer{text-align:center;padding:24px 16px 40px;font-size:14px;color:var(--mute)}
+footer button{background:none;border:0;color:var(--mute);text-decoration:underline;font:inherit;cursor:pointer;min-height:44px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.hero .wrap{grid-template-columns:1fr}.fig{max-height:240px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat.main{grid-column:1/-1}.grid2{grid-template-columns:1fr}
+table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 14px;padding-inline-start:8em}.stack td::before{content:attr(data-l);float:left;width:7.5em;margin-left:-8em;color:var(--mute)}.stack td:empty{display:none}}
+</style>
+</head>
+<body>
+
+<header class="band hero">
+  <div class="wrap">
+    <div>
+      <div class="org">Registro de Imóveis do Brasil – Assis/SP</div>
+      <h1 id="evTitulo">Festa de Fim de Ano 2026</h1>
+      <p>Queremos celebrar com você o encerramento de mais um ano de trabalho. Confirme abaixo se você vai e se levará acompanhante.</p>
+      <div class="info">
+        <div><b>Data</b><span id="evData">11/12/2026</span></div>
+        <div><b>Local</b><span id="evLocal">Vila Salvi</span></div>
+        <div><b>Confirme até</b><span id="evPrazo">30/11/2026</span></div>
+      </div>
+    </div>
+    <div class="fig" aria-hidden="true">
+      <svg viewBox="0 0 500 400">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1d98f"/><stop offset=".55" stop-color="#c9a24a"/><stop offset="1" stop-color="#8f6d24"/></linearGradient>
+          <linearGradient id="c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a6e"/><stop offset="1" stop-color="#0f1f40"/></linearGradient>
+          <symbol id="st" viewBox="-10 -10 20 20"><path d="M0-10 2.4-2.4 10 0 2.4 2.4 0 10-2.4 2.4-10 0-2.4-2.4Z" fill="#e6c878"/></symbol>
+        </defs>
+        <ellipse cx="250" cy="372" rx="170" ry="14" fill="#000" opacity=".25"/>
+        <g transform="rotate(-6 250 200)">
+          <rect x="95" y="60" width="310" height="300" rx="16" fill="url(#c)"/>
+          <rect x="95" y="60" width="310" height="300" rx="16" fill="none" stroke="url(#g)" stroke-width="3"/>
+          <rect x="113" y="78" width="274" height="264" rx="10" fill="none" stroke="#c9a24a" stroke-opacity=".5"/>
+          <text x="250" y="132" text-anchor="middle" font-family="Fraunces,serif" font-size="22" fill="#e6c878">Boas Festas</text>
+          <text x="250" y="300" text-anchor="middle" font-family="Fraunces,serif" font-size="46" font-weight="700" fill="url(#g)">2026</text>
+          <g transform="translate(250 215)">
+            <g transform="rotate(-14)"><path d="M-46-62h36l-4 40a14 14 0 0 1-28 0Z" fill="url(#g)"/><path d="M-41-48h26l-2 24a11 11 0 0 1-22 0Z" fill="#f7e9bd" opacity=".55"/><rect x="-30" y="-8" width="4" height="40" fill="url(#g)"/><rect x="-44" y="30" width="32" height="5" rx="2" fill="url(#g)"/></g>
+            <g transform="rotate(14)"><path d="M10-62h36l-4 40a14 14 0 0 1-28 0Z" fill="url(#g)"/><path d="M15-48h26l-2 24a11 11 0 0 1-22 0Z" fill="#f7e9bd" opacity=".55"/><rect x="26" y="-8" width="4" height="40" fill="url(#g)"/><rect x="12" y="30" width="32" height="5" rx="2" fill="url(#g)"/></g>
+          </g>
+        </g>
+        <use href="#st" class="tw" x="40" y="40" width="30" height="30"/>
+        <use href="#st" class="tw" x="425" y="70" width="22" height="22" style="animation-delay:1s"/>
+        <use href="#st" class="tw" x="440" y="300" width="34" height="34" style="animation-delay:2s"/>
+        <use href="#st" class="tw" x="30" y="290" width="18" height="18" style="animation-delay:.5s"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="band">
+  <form class="form" id="f1" autocomplete="off">
+    <h2 id="formTitulo">Confirme sua presença</h2>
+    <p class="lead" id="formLead">Leva menos de um minuto. Se mudar de ideia, é só responder de novo.</p>
+    <label class="l" for="nomeSel" id="lNome">Seu nome</label>
+    <select id="nomeSel"><option value="">Carregando nomes…</option></select>
+    <input type="text" id="nomeTxt" class="hide" placeholder="Digite seu nome completo">
+    <div id="jaResp" class="done hide"></div>
+    <label class="l" id="lVai">Você vai à festa?</label>
+    <div class="pills" role="group" aria-labelledby="lVai" id="pVai">
+      <button type="button" data-v="sim" aria-pressed="false">Sim, vou</button>
+      <button type="button" data-v="nao" aria-pressed="false">Não vou</button>
+    </div>
+    <div id="blocoAcomp">
+      <label class="l" id="lAc">Você levará acompanhante?</label>
+      <div class="pills" role="group" aria-labelledby="lAc" id="pAc">
+        <button type="button" data-v="sim" aria-pressed="false">Sim</button>
+        <button type="button" data-v="nao" aria-pressed="false">Não</button>
+      </div>
+      <div id="blocoNomeAc" class="hide">
+        <label class="l" for="nomeAc">Nome do acompanhante</label>
+        <input type="text" id="nomeAc">
+      </div>
+    </div>
+    <label class="l" for="obs">Observação <span style="font-weight:400;color:var(--mute)">(opcional — ex.: restrição alimentar)</span></label>
+    <textarea id="obs"></textarea>
+    <div class="actions">
+      <button class="btn" type="submit" id="enviar">Enviar confirmação</button>
+      <button class="btn sec hide" type="button" id="cancelar">Cancelar</button>
+      <span class="msg" id="msg" role="status"></span>
+    </div>
+  </form>
+</section>
+
+<section class="band panel hide" id="login">
+  <div class="form">
+    <h2>Área da organização</h2>
+    <p class="lead" id="loginLead">Digite a senha da gestão.</p>
+    <label class="l" for="senha">Senha</label>
+    <input type="password" id="senha">
+    <div id="blocoSenha2" class="hide"><label class="l" for="senha2">Repita a senha</label><input type="password" id="senha2"></div>
+    <div class="actions"><button class="btn" type="button" id="entrar">Entrar</button><span class="msg" id="msgLogin"></span></div>
+  </div>
+</section>
+
+<section class="band panel hide" id="painel">
+  <div class="wrap">
+    <div class="bar" style="justify-content:space-between"><h2>Painel da organização</h2><button class="btn sec sm" type="button" id="sair">Sair</button></div>
+    <div class="stats" id="stats"></div>
+    <div class="meter" id="meter"></div>
+    <div class="legend" id="legend"></div>
+    <div class="bar">
+      <div class="chips" id="chips"></div>
+      <input type="text" id="busca" placeholder="Buscar nome">
+      <button class="btn sm" type="button" id="novo">+ Lançar resposta</button>
+      <button class="btn sec sm" type="button" id="copiar">Copiar lista</button>
+      <span class="msg" id="msgCopia"></span>
+    </div>
+    <table class="stack"><thead><tr><th>Colaborador</th><th>Resposta</th><th>Acompanhante</th><th>Observação</th><th>Ações</th></tr></thead><tbody id="tb"></tbody></table>
+
+    <details>
+      <summary>Lista de colaboradores (aparece para escolha no formulário)</summary>
+      <p class="note" style="margin-top:0">Um nome por linha. Quem estiver aqui e ainda não respondeu aparece como "Pendente".</p>
+      <textarea id="equipe" style="min-height:220px"></textarea>
+      <div class="actions" style="margin:12px 0 16px"><button class="btn sm" type="button" id="salvarEquipe">Salvar lista</button><span class="msg" id="msgEquipe"></span></div>
+    </details>
+    <details>
+      <summary>Dados do evento</summary>
+      <div class="grid2">
+        <div><label class="l" for="cData">Data e horário</label><input type="text" id="cData"></div>
+        <div><label class="l" for="cLocal">Local</label><input type="text" id="cLocal"></div>
+        <div><label class="l" for="cPrazo">Confirmar até</label><input type="text" id="cPrazo"></div>
+        <div><label class="l" for="cTitulo">Título</label><input type="text" id="cTitulo"></div>
+      </div>
+      <div class="actions" style="margin:12px 0 16px"><button class="btn sm" type="button" id="salvarEv">Salvar dados</button><span class="msg" id="msgEv"></span></div>
+    </details>
+    <details>
+      <summary>Trocar senha da gestão</summary>
+      <label class="l" for="novaSenha">Nova senha</label><input type="password" id="novaSenha">
+      <div class="actions" style="margin:12px 0 16px"><button class="btn sm" type="button" id="trocarSenha">Salvar nova senha</button><span class="msg" id="msgSenha"></span></div>
+    </details>
+  </div>
+</section>
+</main>
+<footer>Registro de Imóveis de Assis/SP · <button type="button" id="abrirGestao">Área da organização</button></footer>
+
+<script type="module">
+// ===== Configuração do Firebase (projeto lista-de-presenca) =====
+const firebaseConfig = {
+  apiKey: "AIzaSyA23fMpC8rxYQNsDQkl3AQ5NMUsZmXg2lI",
+  authDomain: "lista-de-presenca-846ed.firebaseapp.com",
+  projectId: "lista-de-presenca-846ed",
+  storageBucket: "lista-de-presenca-846ed.firebasestorage.app",
+  messagingSenderId: "990635586276",
+  appId: "1:990635586276:web:551d6ea1db49e9428b32f1"
+};
+// ============================================================
+const COL = "festa2026";            // respostas
+const CFG = "festa2026_config";     // evento, colaboradores e senha
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, doc, setDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
+const keyOf=n=>norm(n).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'sem-nome';
+const LBL={sim:'Vai',nao:'Não vai',pend:'Pendente'};
+async function sha(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('festa-assis|'+t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function msg(el,t,err){el.textContent=t;el.classList.toggle('err',!!err)}
+
+let db, rsvps=[], equipe=[], senhaHash='', admin=false, filtro='todos', editKey=null, pendingDel=null, vai='', acomp='';
+try{ db=getFirestore(initializeApp(firebaseConfig)); }catch(e){ msg($('msg'),'Site ainda não configurado.',true); }
+
+function setPills(g,v){for(const b of $(g).querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.v===v))}
+function syncForm(){setPills('pVai',vai);setPills('pAc',acomp);$('blocoAcomp').classList.toggle('hide',vai==='nao');$('blocoNomeAc').classList.toggle('hide',acomp!=='sim'||vai==='nao')}
+$('pVai').addEventListener('click',e=>{const b=e.target.closest('button');if(b){vai=b.dataset.v;if(vai==='nao')acomp='';syncForm()}});
+$('pAc').addEventListener('click',e=>{const b=e.target.closest('button');if(b){acomp=b.dataset.v;syncForm()}});
+
+function nomeAtual(){return (equipe.length&&!editKey?$('nomeSel').value:($('nomeTxt').classList.contains('hide')?$('nomeSel').value:$('nomeTxt').value)).trim()}
+function fill(r){$('nomeAc').value=r?.nomeAc||'';$('obs').value=r?.obs||'';vai=r?.vai||'';acomp=r?.acomp||'';syncForm()}
+function mostrarJa(){
+  const r=rsvps.find(x=>x.id===keyOf(nomeAtual()));
+  if(r&&!editKey){$('jaResp').classList.remove('hide');$('jaResp').textContent='Você já respondeu: '+(r.vai==='sim'?'vai'+(r.acomp==='sim'?' com acompanhante':' sem acompanhante'):'não vai')+'. Se quiser mudar, altere abaixo e envie de novo.';fill(r)}
+  else $('jaResp').classList.add('hide');
+}
+function renderNomes(){
+  const usarLista=equipe.length>0&&!editKey;
+  $('nomeSel').classList.toggle('hide',!usarLista);$('nomeTxt').classList.toggle('hide',usarLista);
+  if(usarLista){const cur=$('nomeSel').value;$('nomeSel').innerHTML='<option value="">Selecione seu nome</option>'+[...equipe].sort((a,b)=>a.localeCompare(b,'pt-BR')).map(n=>`<option${n===cur?' selected':''}>${esc(n)}</option>`).join('')}
+}
+$('nomeSel').addEventListener('change',()=>{fill(null);mostrarJa();msg($('msg'),'')});
+
+$('f1').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const nome=nomeAtual();
+  if(!nome)return msg($('msg'),'Selecione seu nome.',true);
+  if(!vai)return msg($('msg'),'Diga se você vai à festa.',true);
+  if(vai==='sim'&&!acomp)return msg($('msg'),'Diga se levará acompanhante.',true);
+  if(!db)return msg($('msg'),'Sem conexão. Tente novamente.',true);
+  const id=keyOf(nome);
+  const d={nome,vai,acomp:vai==='sim'?acomp:'nao',nomeAc:vai==='sim'&&acomp==='sim'?$('nomeAc').value.trim():'',obs:$('obs').value.trim(),em:new Date().toISOString(),porOrg:!!editKey};
+  $('enviar').disabled=true;
+  try{
+    if(editKey&&editKey!==id)await deleteDoc(doc(db,COL,editKey));
+    await setDoc(doc(db,COL,id),d);
+    msg($('msg'),editKey?'Resposta salva.':'Confirmação registrada. Obrigado!');
+    if(editKey)sairEdicao();
+  }catch(err){msg($('msg'),'Não foi possível salvar. Tente novamente.',true)}
+  $('enviar').disabled=false;
+});
+
+function entrarEdicao(key,nome){
+  editKey=key||'novo';renderNomes();$('nomeTxt').value=nome||'';
+  $('formTitulo').textContent=key?'Editar resposta':'Lançar resposta de um colaborador';
+  $('formLead').textContent='Preencha pelo colaborador que te respondeu pessoalmente.';
+  $('lNome').textContent='Nome do colaborador';$('cancelar').classList.remove('hide');$('jaResp').classList.add('hide');
+  fill(key?rsvps.find(r=>r.id===key):null);msg($('msg'),'');$('f1').scrollIntoView({behavior:'smooth'});
+}
+function sairEdicao(){
+  editKey=null;renderNomes();$('formTitulo').textContent='Confirme sua presença';$('formLead').textContent='Leva menos de um minuto. Se mudar de ideia, é só responder de novo.';
+  $('lNome').textContent='Seu nome';$('cancelar').classList.add('hide');$('nomeTxt').value='';$('nomeSel').value='';fill(null);
+}
+$('cancelar').addEventListener('click',()=>{sairEdicao();msg($('msg'),'')});
+$('novo').addEventListener('click',()=>entrarEdicao(null,''));
+
+// ===== Gestão =====
+$('abrirGestao').addEventListener('click',()=>{if(admin){$('painel').scrollIntoView({behavior:'smooth'});return}
+  $('login').classList.remove('hide');const novo=!senhaHash;$('blocoSenha2').classList.toggle('hide',!novo);
+  $('loginLead').textContent=novo?'Primeiro acesso: crie a senha da gestão.':'Digite a senha da gestão.';$('entrar').textContent=novo?'Criar senha e entrar':'Entrar';
+  $('login').scrollIntoView({behavior:'smooth'});$('senha').focus()});
+$('senha').addEventListener('keydown',e=>{if(e.key==='Enter')$('entrar').click()});
+$('entrar').addEventListener('click',async()=>{
+  const s=$('senha').value;if(!s)return msg($('msgLogin'),'Digite a senha.',true);
+  const h=await sha(s);
+  if(!senhaHash){if(s.length<4)return msg($('msgLogin'),'Use pelo menos 4 caracteres.',true);if(s!==$('senha2').value)return msg($('msgLogin'),'As senhas não conferem.',true);
+    try{await setDoc(doc(db,CFG,'acesso'),{hash:h});senhaHash=h}catch(e){return msg($('msgLogin'),'Não foi possível salvar.',true)}}
+  if(h!==senhaHash)return msg($('msgLogin'),'Senha incorreta.',true);
+  admin=true;try{sessionStorage.setItem('festaAdm',h)}catch(e){}
+  $('senha').value='';$('senha2').value='';$('login').classList.add('hide');$('painel').classList.remove('hide');render();$('painel').scrollIntoView({behavior:'smooth'});
+});
+$('sair').addEventListener('click',()=>{admin=false;try{sessionStorage.removeItem('festaAdm')}catch(e){}$('painel').classList.add('hide')});
+$('trocarSenha').addEventListener('click',async()=>{const s=$('novaSenha').value;if(s.length<4)return msg($('msgSenha'),'Use pelo menos 4 caracteres.',true);
+  try{const h=await sha(s);await setDoc(doc(db,CFG,'acesso'),{hash:h});try{sessionStorage.setItem('festaAdm',h)}catch(e){}$('novaSenha').value='';msg($('msgSenha'),'Senha alterada.')}catch(e){msg($('msgSenha'),'Não foi possível salvar.',true)}});
+
+function linhas(){
+  const resp=new Set(rsvps.map(r=>r.id));
+  return [...rsvps,...equipe.filter(n=>!resp.has(keyOf(n))).map(n=>({id:'',nome:n,vai:'pend'}))].sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
+}
+function render(){
+  if(!admin)return;
+  const all=linhas(),c={sim:0,nao:0,pend:0,ac:0};
+  for(const r of all){c[r.vai]=(c[r.vai]||0)+1;if(r.vai==='sim'&&r.acomp==='sim')c.ac++}
+  $('stats').innerHTML=[['main',c.sim+c.ac,'pessoas no total'],['',c.sim,'colaboradores vão'],['',c.ac,'acompanhantes'],['',c.nao,'não vão'],['',c.pend,'ainda não responderam']]
+    .map(([k,n,t])=>`<div class="stat ${k}"><b>${n}</b><span>${t}</span></div>`).join('');
+  const den=all.length||1,seg=[['sim','var(--ok)'],['nao','var(--no)'],['pend','var(--mute)']];
+  $('meter').innerHTML=seg.map(([k,col])=>`<i style="width:${c[k]/den*100}%;background:${col}"></i>`).join('');
+  $('legend').innerHTML=seg.map(([k,col])=>`<span><i class="dot" style="background:${col}"></i>${LBL[k]}: ${c[k]}</span>`).join('')+`<span>${rsvps.length} respostas${equipe.length?' de '+equipe.length+' colaboradores':''}</span>`;
+  const fs=[['todos','Todos'],['sim','Vão'],['nao','Não vão'],['ac','Com acompanhante'],['pend','Pendentes']];
+  $('chips').innerHTML=fs.map(([k,t])=>`<button type="button" data-f="${k}" aria-pressed="${filtro===k}">${t}</button>`).join('');
+  const q=norm($('busca').value);
+  const vis=all.filter(r=>(filtro==='todos'||(filtro==='ac'?r.vai==='sim'&&r.acomp==='sim':r.vai===filtro))&&(!q||norm(r.nome).includes(q)||norm(r.nomeAc).includes(q)));
+  $('tb').innerHTML=vis.length?vis.map(r=>`<tr><td data-l="Colaborador"><b>${esc(r.nome)}</b></td><td data-l="Resposta"><span class="tag t-${r.vai}">${LBL[r.vai]}</span></td>
+    <td data-l="Acompanhante">${r.vai==='sim'?(r.acomp==='sim'?'Sim'+(r.nomeAc?' — '+esc(r.nomeAc):''):'Não'):''}</td><td data-l="Observação">${esc(r.obs||'')}</td>
+    <td data-l="Ações"><div class="row-act">${r.id?`<button type="button" data-ed="${esc(r.id)}">Editar</button><button type="button" class="${pendingDel===r.id?'danger':''}" data-del="${esc(r.id)}">${pendingDel===r.id?'Confirmar exclusão':'Excluir'}</button>`:`<button type="button" data-lanc="${esc(r.nome)}">Lançar resposta</button>`}</div></td></tr>`).join('')
+    :`<tr><td colspan="5" class="empty">${all.length?'Ninguém neste filtro.':'Nenhuma resposta ainda. Cadastre a lista de colaboradores e envie o link no grupo.'}</td></tr>`;
+}
+$('chips').addEventListener('click',e=>{const b=e.target.closest('button');if(b){filtro=b.dataset.f;render()}});
+$('busca').addEventListener('input',render);
+$('tb').addEventListener('click',async e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.ed){const r=rsvps.find(x=>x.id===b.dataset.ed);entrarEdicao(b.dataset.ed,r?.nome)}
+  if(b.dataset.lanc)entrarEdicao(null,b.dataset.lanc);
+  if(b.dataset.del){const k=b.dataset.del;
+    if(pendingDel!==k){pendingDel=k;render();setTimeout(()=>{if(pendingDel===k){pendingDel=null;render()}},4000);return}
+    pendingDel=null;try{await deleteDoc(doc(db,COL,k))}catch(err){}}
+});
+$('copiar').addEventListener('click',async()=>{
+  const all=linhas(),vao=all.filter(r=>r.vai==='sim'),ac=vao.filter(r=>r.acomp==='sim').length,out=[$('evTitulo').textContent+' — '+$('evData').textContent+' — '+$('evLocal').textContent,'',`CONFIRMADOS: ${vao.length} colaboradores + ${ac} acompanhantes = ${vao.length+ac} pessoas`];
+  vao.forEach((r,i)=>out.push(`${i+1}. ${r.nome}${r.acomp==='sim'?' + acompanhante'+(r.nomeAc?' ('+r.nomeAc+')':''):''}${r.obs?' — '+r.obs:''}`));
+  for(const [k,t] of [['nao','NÃO VÃO'],['pend','AINDA NÃO RESPONDERAM']]){const l=all.filter(r=>r.vai===k);if(l.length){out.push('',`${t} (${l.length})`);l.forEach(r=>out.push('- '+r.nome))}}
+  try{await navigator.clipboard.writeText(out.join('\n'));msg($('msgCopia'),'Lista copiada.')}catch(err){msg($('msgCopia'),'Não foi possível copiar.',true)}
+  setTimeout(()=>msg($('msgCopia'),''),3000);
+});
+$('salvarEquipe').addEventListener('click',async()=>{const nomes=[...new Set($('equipe').value.split('\n').map(s=>s.trim()).filter(Boolean))];
+  try{await setDoc(doc(db,CFG,'colaboradores'),{nomes});msg($('msgEquipe'),'Lista salva ('+nomes.length+' nomes).')}catch(e){msg($('msgEquipe'),'Não foi possível salvar.',true)}});
+$('salvarEv').addEventListener('click',async()=>{const d={titulo:$('cTitulo').value.trim(),data:$('cData').value.trim(),local:$('cLocal').value.trim(),prazo:$('cPrazo').value.trim()};
+  try{await setDoc(doc(db,CFG,'evento'),d);msg($('msgEv'),'Dados salvos.')}catch(e){msg($('msgEv'),'Não foi possível salvar.',true)}});
+
+if(db){
+  const timer=setTimeout(()=>msg($('msg'),'Não foi possível conectar. Verifique sua internet e recarregue a página.',true),10000);
+  onSnapshot(collection(db,COL),s=>{clearTimeout(timer);rsvps=s.docs.map(d=>({id:d.id,...d.data()})).filter(r=>r.nome);if(!editKey&&!$('jaResp').classList.contains('hide'))mostrarJa();render()},()=>{clearTimeout(timer);msg($('msg'),'Não foi possível carregar.',true)});
+  onSnapshot(doc(db,CFG,'colaboradores'),s=>{equipe=(s.data()?.nomes||[]).map(String);renderNomes();if(document.activeElement!==$('equipe'))$('equipe').value=equipe.join('\n');render()},()=>{});
+  onSnapshot(doc(db,CFG,'evento'),s=>{const d=s.data()||{};
+    $('evTitulo').textContent=d.titulo||'Festa de Fim de Ano 2026';$('evData').textContent=d.data||'11/12/2026';$('evLocal').textContent=d.local||'Vila Salvi';$('evPrazo').textContent=d.prazo||'30/11/2026';
+    for(const [i,k,dv] of [['cTitulo','titulo','Festa de Fim de Ano 2026'],['cData','data','11/12/2026'],['cLocal','local','Vila Salvi'],['cPrazo','prazo','30/11/2026']])if(document.activeElement!==$(i))$(i).value=d[k]||dv},()=>{});
+  onSnapshot(doc(db,CFG,'acesso'),s=>{senhaHash=s.data()?.hash||'';let h='';try{h=sessionStorage.getItem('festaAdm')||''}catch(e){}
+    if(h&&h===senhaHash&&!admin){admin=true;$('painel').classList.remove('hide');render()}},()=>{});
+}
+</script>
+</body>
+</html>
