@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Festa de Fim de Ano – Registro Assis</title>
+<title>Confraternização 2026 – Registro de Imóveis de Assis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -86,9 +86,9 @@ table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-bl
 <header class="band hero">
   <div class="wrap">
     <div>
-      <div class="org">Registro de Imóveis do Brasil – Assis/SP</div>
-      <h1 id="evTitulo">Festa de Fim de Ano 2026</h1>
-      <p>Queremos celebrar com você o encerramento de mais um ano de trabalho. Confirme abaixo se você vai e se levará acompanhante.</p>
+      <div class="org">Registro de Imóveis de Assis</div>
+      <h1 id="evTitulo">Confraternização 2026</h1>
+      <p>Obrigado pela dedicação de cada um ao longo deste ano. Vamos confraternizar juntos!</p>
       <div class="info">
         <div><b>Data</b><span id="evData">11/12/2026</span></div>
         <div><b>Local</b><span id="evLocal">Vila Salvi</span></div>
@@ -208,7 +208,7 @@ table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-bl
   </div>
 </section>
 </main>
-<footer>Registro de Imóveis de Assis/SP · <button type="button" id="abrirGestao">Área da organização</button></footer>
+<footer>Registro de Imóveis de Assis · <button type="button" id="abrirGestao">Área da organização</button></footer>
 
 <script type="module">
 // ===== Configuração do Firebase (projeto lista-de-presenca) =====
@@ -358,8 +358,8 @@ if(db){
   onSnapshot(collection(db,COL),s=>{clearTimeout(timer);rsvps=s.docs.map(d=>({id:d.id,...d.data()})).filter(r=>r.nome);if(!editKey&&!$('jaResp').classList.contains('hide'))mostrarJa();render()},()=>{clearTimeout(timer);msg($('msg'),'Não foi possível carregar.',true)});
   onSnapshot(doc(db,CFG,'colaboradores'),s=>{equipe=(s.data()?.nomes||[]).map(String);renderNomes();if(document.activeElement!==$('equipe'))$('equipe').value=equipe.join('\n');render()},()=>{});
   onSnapshot(doc(db,CFG,'evento'),s=>{const d=s.data()||{};
-    $('evTitulo').textContent=d.titulo||'Festa de Fim de Ano 2026';$('evData').textContent=d.data||'11/12/2026';$('evLocal').textContent=d.local||'Vila Salvi';$('evPrazo').textContent=d.prazo||'30/11/2026';
-    for(const [i,k,dv] of [['cTitulo','titulo','Festa de Fim de Ano 2026'],['cData','data','11/12/2026'],['cLocal','local','Vila Salvi'],['cPrazo','prazo','30/11/2026']])if(document.activeElement!==$(i))$(i).value=d[k]||dv},()=>{});
+    $('evTitulo').textContent=d.titulo||'Confraternização 2026';$('evData').textContent=d.data||'11/12/2026';$('evLocal').textContent=d.local||'Vila Salvi';$('evPrazo').textContent=d.prazo||'30/11/2026';
+    for(const [i,k,dv] of [['cTitulo','titulo','Confraternização 2026'],['cData','data','11/12/2026'],['cLocal','local','Vila Salvi'],['cPrazo','prazo','30/11/2026']])if(document.activeElement!==$(i))$(i).value=d[k]||dv},()=>{});
   onSnapshot(doc(db,CFG,'acesso'),s=>{senhaHash=s.data()?.hash||'';let h='';try{h=sessionStorage.getItem('festaAdm')||''}catch(e){}
     if(h&&h===senhaHash&&!admin){admin=true;$('painel').classList.remove('hide');render()}},()=>{});
 }
